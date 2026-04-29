@@ -47,7 +47,8 @@ export default function LiveSystemPreview() {
               <motion.div
                 className="absolute top-0 bottom-0 w-8 bg-[var(--teal)] shadow-[0_0_15px_var(--teal)] blur-[2px]"
                 animate={{ 
-                  left: ["0%", "calc(100% - 32px)"],
+                  left: ["0%", "100%"],
+                  x: ["0%", "-100%"],
                   opacity: [0, 1, 1, 0]
                 }}
                 transition={{ 
@@ -77,7 +78,8 @@ export default function LiveSystemPreview() {
               <motion.div
                 className="absolute top-0 bottom-0 w-8 bg-[var(--orange)] shadow-[0_0_15px_var(--orange)] blur-[2px]"
                 animate={{ 
-                  left: ["0%", "calc(100% - 32px)"],
+                  left: ["0%", "100%"],
+                  x: ["0%", "-100%"],
                   opacity: [0, 1, 1, 0]
                 }}
                 transition={{ 
