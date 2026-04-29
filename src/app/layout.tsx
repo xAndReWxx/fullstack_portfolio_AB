@@ -18,9 +18,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mostafa Eltalawy | Fullstack Developer",
+  title: "Andrew BL | Software Engineer",
   description:
-    "Premium fullstack developer portfolio — React, .NET, TypeScript. Building scalable web applications that solve real problems.",
+    "Premium software engineer portfolio — React, .NET, TypeScript. Building scalable web applications that solve real problems.",
 };
 
 export default function RootLayout({
