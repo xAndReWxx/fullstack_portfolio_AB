@@ -88,7 +88,7 @@ export default function Navbar() {
             style={{ fontFamily: "var(--font-heading)" }}
           >
             <span className="text-[var(--teal)] group-hover:text-[var(--orange)] transition-colors duration-500">&lt;/&gt;</span>
-            <span className="text-[var(--fg)]">Mostafa</span>
+            <span className="text-[var(--fg)]">Andrew</span>
           </a>
         </div>
 

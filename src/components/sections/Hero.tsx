@@ -145,7 +145,7 @@ export default function Hero() {
 
           <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[1.1] mb-2 text-center" style={{ fontFamily: "var(--font-heading)" }}>
             <span className="animated-gradient-text block pb-2">
-              Mostafa Eltalawy
+              Andrew Bahgat
             </span>
           </motion.h1>
 
