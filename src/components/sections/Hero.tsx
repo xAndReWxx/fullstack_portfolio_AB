@@ -53,7 +53,7 @@ const technologies = [
 ];
 
 export default function Hero() {
-  const { displayed } = useTypingEffect("Fullstack Developer_", 100);
+  const { displayed } = useTypingEffect("Fullstack Developer_", 100, 2800);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
