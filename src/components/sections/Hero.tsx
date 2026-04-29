@@ -198,16 +198,20 @@ export default function Hero() {
           <div className="flex flex-col gap-4 w-full xl:w-3/5">
             <span className="text-[var(--fg-muted)] font-medium text-sm">Technologies I work with</span>
             <div className="flex flex-wrap gap-4">
-              {technologies.map((tech) => (
-                <div 
+              {technologies.map((tech, idx) => (
+                <motion.div 
                   key={tech.name} 
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 2.8 + idx * 0.1, type: "spring", stiffness: 200 }}
                   className="w-12 h-12 rounded-full glass border border-white/10 flex items-center justify-center hover:scale-110 transition-transform bg-[#0B0B0F]/80 shadow-[0_0_15px_rgba(0,0,0,0.5)] group"
                   title={tech.name}
                 >
                   <div className="group-hover:drop-shadow-[0_0_8px_currentColor]" style={{ color: tech.color }}>
                     {tech.icon}
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -227,7 +231,7 @@ export default function Hero() {
                 className="flex flex-col items-center justify-center text-center space-y-2 group"
               >
                 <div className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--teal)] to-[var(--orange)] drop-shadow-[0_0_10px_var(--teal)]">
-                  <Counter to={stat.value} suffix={stat.suffix} />
+                  <Counter to={stat.value} suffix={stat.suffix} delay={2.8 + idx * 0.2} duration={2.5} />
                 </div>
                 <p className="text-[var(--fg-muted)] text-[10px] sm:text-xs font-medium uppercase tracking-wider group-hover:text-white transition-colors">
                   {stat.label}

@@ -42,28 +42,40 @@ export default function About() {
           </motion.div>
 
           <motion.div variants={fadeUp} className="grid md:grid-cols-3 gap-6 w-full max-w-5xl">
-            <div className="glass glass-hover p-8 rounded-3xl flex flex-col items-center text-center group">
-              <div className="w-16 h-16 rounded-2xl bg-[var(--cyan)]/10 text-[var(--cyan)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                <Terminal size={32} />
+            {/* Card 1 */}
+            <div className="h-full">
+              <div className="glass h-full p-8 rounded-3xl flex flex-col items-center text-center group relative overflow-hidden premium-hover-card">
+                <div className="absolute inset-0 bg-gradient-to-b from-[var(--cyan)]/0 to-transparent group-hover:from-[var(--cyan)]/5 transition-colors duration-500" />
+                <div className="w-16 h-16 rounded-2xl bg-[var(--cyan)]/10 text-[var(--cyan)] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_25px_var(--cyan)] group-hover:bg-[var(--cyan)]/20 transition-all duration-500 relative z-10">
+                  <Terminal size={32} />
+                </div>
+                <h3 className="font-bold text-xl mb-3 text-[var(--fg)] relative z-10">Problem Solving</h3>
+                <p className="text-[var(--fg-muted)] relative z-10">Breaking down complex requirements into elegant technical solutions.</p>
               </div>
-              <h3 className="font-bold text-xl mb-3 text-[var(--fg)]">Problem Solving</h3>
-              <p className="text-[var(--fg-muted)]">Breaking down complex requirements into elegant technical solutions.</p>
             </div>
 
-            <div className="glass glass-hover p-8 rounded-3xl flex flex-col items-center text-center group md:-translate-y-6">
-              <div className="w-16 h-16 rounded-2xl bg-[var(--blue)]/10 text-[var(--blue)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                <Code2 size={32} />
+            {/* Card 2 */}
+            <div className="h-full md:-translate-y-6">
+              <div className="glass h-full p-8 rounded-3xl flex flex-col items-center text-center group relative overflow-hidden premium-hover-card">
+                <div className="absolute inset-0 bg-gradient-to-b from-[var(--blue)]/0 to-transparent group-hover:from-[var(--blue)]/5 transition-colors duration-500" />
+                <div className="w-16 h-16 rounded-2xl bg-[var(--blue)]/10 text-[var(--blue)] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_25px_var(--blue)] group-hover:bg-[var(--blue)]/20 transition-all duration-500 relative z-10">
+                  <Code2 size={32} />
+                </div>
+                <h3 className="font-bold text-xl mb-3 text-[var(--fg)] relative z-10">Clean Code</h3>
+                <p className="text-[var(--fg-muted)] relative z-10">Writing readable, maintainable, and well-documented software.</p>
               </div>
-              <h3 className="font-bold text-xl mb-3 text-[var(--fg)]">Clean Code</h3>
-              <p className="text-[var(--fg-muted)]">Writing readable, maintainable, and well-documented software.</p>
             </div>
 
-            <div className="glass glass-hover p-8 rounded-3xl flex flex-col items-center text-center group">
-              <div className="w-16 h-16 rounded-2xl bg-[var(--purple)]/10 text-[var(--purple)] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                <Server size={32} />
+            {/* Card 3 */}
+            <div className="h-full">
+              <div className="glass h-full p-8 rounded-3xl flex flex-col items-center text-center group relative overflow-hidden premium-hover-card">
+                <div className="absolute inset-0 bg-gradient-to-b from-[var(--purple)]/0 to-transparent group-hover:from-[var(--purple)]/5 transition-colors duration-500" />
+                <div className="w-16 h-16 rounded-2xl bg-[var(--purple)]/10 text-[var(--purple)] flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-[0_0_25px_var(--purple)] group-hover:bg-[var(--purple)]/20 transition-all duration-500 relative z-10">
+                  <Server size={32} />
+                </div>
+                <h3 className="font-bold text-xl mb-3 text-[var(--fg)] relative z-10">Scalable Architecture</h3>
+                <p className="text-[var(--fg-muted)] relative z-10">Designing systems that grow seamlessly with your user base.</p>
               </div>
-              <h3 className="font-bold text-xl mb-3 text-[var(--fg)]">Scalable Architecture</h3>
-              <p className="text-[var(--fg-muted)]">Designing systems that grow seamlessly with your user base.</p>
             </div>
           </motion.div>
         </motion.div>
