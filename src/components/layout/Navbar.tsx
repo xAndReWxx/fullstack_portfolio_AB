@@ -35,8 +35,8 @@ export default function Navbar() {
         });
       },
       {
-        rootMargin: "-20% 0px -20% 0px",
-        threshold: 0.4,
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: 0.1,
       }
     );
 
@@ -54,15 +54,18 @@ export default function Navbar() {
 
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const target = document.querySelector(href) as HTMLElement;
+    const target = document.querySelector(href);
     if (target) {
-      window.scrollTo({
-        top: target.offsetTop,
-        behavior: "smooth",
-      });
+      // Close mobile menu first
       setMobileOpen(false);
+      
+      // Small delay to let the menu close so the DOM is stable before scrolling
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth" });
+      }, 50);
     }
   };
+
 
   return (
     <motion.nav
@@ -70,7 +73,7 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+        scrolled || mobileOpen
           ? "glass bg-[var(--nav-bg)] border-b border-[var(--border)] py-4 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md"
           : "bg-transparent py-6"
       }`}
@@ -120,13 +123,16 @@ export default function Navbar() {
         </div>
 
         {/* Right side balance & Mobile toggle */}
-        <div className="flex-1 flex justify-end z-20">
+        <div className="flex-1 flex justify-end relative z-50 pointer-events-auto">
           <button
-            className="lg:hidden text-[var(--fg)] p-2"
-            onClick={() => setMobileOpen(!mobileOpen)}
+            className="lg:hidden text-[var(--fg)] p-2 active:scale-95 transition-transform"
+            onClick={(e) => {
+              e.stopPropagation();
+              setMobileOpen(!mobileOpen);
+            }}
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </div>
@@ -141,7 +147,7 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="lg:hidden glass border-t border-[rgba(255,255,255,0.06)] overflow-hidden"
           >
-            <div className="px-6 py-6 flex flex-col gap-4">
+            <div className="px-6 py-6 flex flex-col gap-4 max-h-[70vh] overflow-y-auto" style={{ scrollbarWidth: 'none' }}>
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.substring(1);
                 return (

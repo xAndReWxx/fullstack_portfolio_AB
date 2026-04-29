@@ -60,14 +60,12 @@ export default function Hero() {
     setMounted(true);
   }, []);
 
+
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const target = document.querySelector(href) as HTMLElement;
+    const target = document.querySelector(href);
     if (target) {
-      window.scrollTo({
-        top: target.offsetTop,
-        behavior: "smooth",
-      });
+      target.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -143,7 +141,7 @@ export default function Hero() {
             <span className="text-xl tracking-wide"><span className="font-bold italic">Hi,</span> my name is</span>
           </motion.div>
 
-          <motion.h1 variants={fadeUp} className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[1.1] mb-2 text-center" style={{ fontFamily: "var(--font-heading)" }}>
+          <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter leading-[1.1] mb-2 text-center" style={{ fontFamily: "var(--font-heading)" }}>
             <span className="animated-gradient-text block pb-2">
               Mostafa Eltalawy
             </span>
@@ -216,7 +214,7 @@ export default function Hero() {
           <div className="hidden xl:block w-px h-20 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
 
           {/* Stats Right */}
-          <div className="flex flex-row justify-between w-full xl:w-2/5 gap-4">
+          <div className="flex flex-wrap sm:flex-nowrap justify-center sm:justify-between w-full xl:w-2/5 gap-6 sm:gap-4">
             {stats.map((stat, idx) => (
               <motion.div
                 key={stat.label}
@@ -226,7 +224,7 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
                 className="flex flex-col items-center justify-center text-center space-y-2 group"
               >
-                <div className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--teal)] to-[var(--orange)] drop-shadow-[0_0_10px_var(--teal)]">
+                <div className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--teal)] to-[var(--orange)] drop-shadow-[0_0_10px_var(--teal)]">
                   <Counter to={stat.value} suffix={stat.suffix} />
                 </div>
                 <p className="text-[var(--fg-muted)] text-[10px] sm:text-xs font-medium uppercase tracking-wider group-hover:text-white transition-colors">

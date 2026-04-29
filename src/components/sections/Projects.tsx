@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 const GithubIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -16,6 +17,7 @@ const projects = [
     title: "FinTech Dashboard",
     category: "Fullstack App",
     imageColor: "var(--cyan)",
+    image: "/projects/fintech.png",
     summary: "A high-performance financial analytics dashboard for real-time portfolio tracking.",
     problem: "Financial analysts needed a centralized, real-time dashboard to monitor complex portfolios across multiple exchanges without lagging.",
     solution: "Built a highly optimized Next.js frontend with WebSockets for real-time data, backed by a robust .NET Core API and Redis caching.",
@@ -27,6 +29,7 @@ const projects = [
     title: "E-Commerce Architecture",
     category: "Backend System",
     imageColor: "var(--blue)",
+    image: "/projects/ecommerce.png",
     summary: "Microservices-based backend for a large-scale e-commerce platform.",
     problem: "The client's monolithic architecture was crashing during peak holiday sales events.",
     solution: "Migrated the critical checkout and inventory services to a scalable microservices architecture using .NET, RabbitMQ, and Docker.",
@@ -38,6 +41,7 @@ const projects = [
     title: "SaaS Landing Page",
     category: "Frontend & Design",
     imageColor: "var(--purple)",
+    image: "/projects/saas.png",
     summary: "Premium, animated marketing site for an AI startup.",
     problem: "The startup needed a visually stunning web presence to attract early investors and signups.",
     solution: "Designed and developed an immersive landing page utilizing Framer Motion, custom WebGL effects, and premium typography.",
@@ -86,17 +90,20 @@ export default function Projects() {
               onClick={() => setSelectedProject(project.id)}
               className="glass p-6 rounded-2xl cursor-pointer group flex flex-col h-full relative overflow-hidden premium-hover-card"
             >
-              {/* Fake Image Placeholder with dynamic color */}
+              {/* Project Image */}
               <div 
-                className="w-full h-48 rounded-xl mb-6 relative overflow-hidden bg-black/40 border border-[var(--glass-border)]"
+                className="w-full h-48 rounded-xl mb-6 relative overflow-hidden bg-[var(--bg)] border border-[var(--glass-border)]"
               >
-                <div 
-                  className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500 blur-2xl"
-                  style={{ background: project.imageColor }}
+                <Image 
+                  src={project.image} 
+                  alt={project.title} 
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-[var(--fg-muted)] font-mono text-xs tracking-widest uppercase opacity-50">Project View</span>
-                </div>
+                <div 
+                  className="absolute inset-0 opacity-40 group-hover:opacity-20 transition-opacity duration-500 mix-blend-overlay"
+                  style={{ background: `linear-gradient(to bottom, transparent, ${project.imageColor})` }}
+                />
               </div>
 
               <span className="text-xs font-mono mb-2" style={{ color: project.imageColor }}>
@@ -140,6 +147,19 @@ export default function Projects() {
               >
                 <X size={20} />
               </button>
+
+              <div className="w-full h-48 md:h-72 relative overflow-hidden border-b border-[var(--glass-border)]">
+                <Image 
+                  src={activeProject.image} 
+                  alt={activeProject.title} 
+                  fill
+                  className="object-cover opacity-80"
+                />
+                <div 
+                  className="absolute inset-0 opacity-40 mix-blend-overlay"
+                  style={{ background: `linear-gradient(to bottom, transparent, ${activeProject.imageColor})` }}
+                />
+              </div>
 
               <div className="p-8 md:p-12">
                 <div className="flex items-center gap-4 mb-6">

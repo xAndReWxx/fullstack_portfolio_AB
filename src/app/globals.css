@@ -45,6 +45,11 @@
 
 /* ─── Base ─── */
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 body {
   background: var(--bg);
   color: var(--fg);
