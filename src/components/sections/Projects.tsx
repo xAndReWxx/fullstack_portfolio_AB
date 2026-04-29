@@ -11,13 +11,15 @@ const GithubIcon = () => (
   </svg>
 );
 
+const basePath = process.env.NODE_ENV === "production" ? "/fullstack_portfolio_AB" : "";
+
 const projects = [
   {
     id: 1,
     title: "FinTech Dashboard",
     category: "Fullstack App",
     imageColor: "var(--cyan)",
-    image: "/projects/fintech.png",
+    image: `${basePath}/projects/fintech.png`,
     summary: "A high-performance financial analytics dashboard for real-time portfolio tracking.",
     problem: "Financial analysts needed a centralized, real-time dashboard to monitor complex portfolios across multiple exchanges without lagging.",
     solution: "Built a highly optimized Next.js frontend with WebSockets for real-time data, backed by a robust .NET Core API and Redis caching.",
@@ -29,7 +31,7 @@ const projects = [
     title: "E-Commerce Architecture",
     category: "Backend System",
     imageColor: "var(--blue)",
-    image: "/projects/ecommerce.png",
+    image: `${basePath}/projects/ecommerce.png`,
     summary: "Microservices-based backend for a large-scale e-commerce platform.",
     problem: "The client's monolithic architecture was crashing during peak holiday sales events.",
     solution: "Migrated the critical checkout and inventory services to a scalable microservices architecture using .NET, RabbitMQ, and Docker.",
@@ -41,7 +43,7 @@ const projects = [
     title: "SaaS Landing Page",
     category: "Frontend & Design",
     imageColor: "var(--purple)",
-    image: "/projects/saas.png",
+    image: `${basePath}/projects/saas.png`,
     summary: "Premium, animated marketing site for an AI startup.",
     problem: "The startup needed a visually stunning web presence to attract early investors and signups.",
     solution: "Designed and developed an immersive landing page utilizing Framer Motion, custom WebGL effects, and premium typography.",
