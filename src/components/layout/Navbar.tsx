@@ -84,13 +84,22 @@ export default function Navbar() {
           <a
             href="#home"
             onClick={(e) => handleSmoothScroll(e, "#home")}
-            className="group relative flex items-center justify-center w-11 h-11 rounded-xl bg-black/40 border border-[var(--glass-border)] hover:border-[var(--teal)]/50 hover:shadow-[0_0_20px_rgba(0,255,198,0.2)] transition-all duration-500 overflow-hidden"
-            style={{ fontFamily: "var(--font-heading)" }}
+            className="group flex items-center gap-3"
           >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br from-[var(--teal)]/20 to-[var(--orange)]/20 transition-opacity duration-500" />
-            <span className="relative z-10 font-bold tracking-tighter text-[1.15rem] bg-clip-text text-transparent bg-gradient-to-br from-[var(--fg)] to-[var(--fg-muted)] group-hover:from-[var(--teal)] group-hover:to-[var(--orange)] transition-all duration-500">
-              AB
-            </span>
+            {/* The Icon Box */}
+            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-[var(--teal)]/10 text-[var(--teal)] border border-[var(--teal)]/20 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(0,255,198,0.3)] group-hover:bg-[var(--teal)]/20 transition-all duration-500">
+              <span className="font-bold text-lg" style={{ fontFamily: "var(--font-heading)" }}>&lt;/&gt;</span>
+            </div>
+            
+            {/* The Text */}
+            <div className="flex flex-col justify-center">
+              <span className="font-bold tracking-tight text-xl text-[var(--fg)] group-hover:text-white transition-colors duration-300 leading-none" style={{ fontFamily: "var(--font-heading)" }}>
+                Andrew B.
+              </span>
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[var(--fg-muted)] group-hover:text-[var(--teal)] font-mono mt-1 transition-colors duration-300">
+                Software Engineer
+              </span>
+            </div>
           </a>
         </div>
 
