@@ -72,7 +72,7 @@ export default function Contact() {
       {/* Footer minimal */}
       <div className="absolute bottom-6 left-0 right-0 text-center">
         <p className="text-[var(--fg-muted)] text-xs font-mono opacity-50">
-          © {new Date().getFullYear()} created by Andrew Bahgat. Designed & Built with precision.
+          © {new Date().getFullYear()} created by Andrew BL. Designed & Built with precision.
         </p>
       </div>
     </section>

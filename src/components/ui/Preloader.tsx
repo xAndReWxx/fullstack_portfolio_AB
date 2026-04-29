@@ -64,7 +64,7 @@ export default function Preloader() {
             
             <div className="mt-8 font-heading text-xl md:text-2xl font-bold tracking-[0.2em] uppercase text-[var(--fg)] opacity-50 text-center" style={{ fontFamily: "var(--font-heading)" }}>
               <span className="text-sm font-medium tracking-normal text-[var(--fg-muted)] lowercase">created by</span><br/>
-              Andrew Bahgat
+              Andrew BL
             </div>
           </div>
         </motion.div>
