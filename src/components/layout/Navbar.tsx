@@ -71,7 +71,7 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 2.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled || mobileOpen
           ? "glass bg-[var(--nav-bg)] border-b border-[var(--border)] py-4 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-md"

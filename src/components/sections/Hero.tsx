@@ -10,7 +10,7 @@ const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.15, delayChildren: 2.6 },
   },
 };
 
@@ -88,13 +88,15 @@ export default function Hero() {
         {/* Glow areas - Reduced */}
         <motion.div 
           className="absolute top-[0%] right-[-10%] w-[40vw] h-[40vw] rounded-full opacity-[0.03] blur-[100px] bg-[var(--magenta)]"
+          initial={{ opacity: 0 }}
           animate={{ scale: [1, 1.1, 1], opacity: [0.02, 0.04, 0.02] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
         />
         <motion.div 
           className="absolute bottom-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full opacity-[0.04] blur-[100px] bg-[var(--teal)]"
+          initial={{ opacity: 0 }}
           animate={{ scale: [1, 1.15, 1], opacity: [0.03, 0.05, 0.03] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
         />
 
         {/* Particles - Reduced */}
@@ -221,7 +223,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 + idx * 0.1 }}
+                transition={{ duration: 0.5, delay: 2.8 + idx * 0.1 }}
                 className="flex flex-col items-center justify-center text-center space-y-2 group"
               >
                 <div className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--teal)] to-[var(--orange)] drop-shadow-[0_0_10px_var(--teal)]">
