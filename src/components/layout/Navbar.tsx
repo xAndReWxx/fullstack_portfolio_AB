@@ -75,20 +75,22 @@ export default function Navbar() {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="#home"
-          onClick={(e) => handleSmoothScroll(e, "#home")}
-          className="font-heading text-2xl tracking-tight font-bold group flex items-center gap-2"
-          style={{ fontFamily: "var(--font-heading)" }}
-        >
-          <span className="text-[var(--teal)] group-hover:text-[var(--orange)] transition-colors duration-500">&lt;/&gt;</span>
-          <span className="text-[var(--fg)]">Mostafa</span>
-        </a>
+        <div className="flex-1 flex justify-start z-20">
+          <a
+            href="#home"
+            onClick={(e) => handleSmoothScroll(e, "#home")}
+            className="font-heading text-2xl tracking-tight font-bold group flex items-center gap-2"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            <span className="text-[var(--teal)] group-hover:text-[var(--orange)] transition-colors duration-500">&lt;/&gt;</span>
+            <span className="text-[var(--fg)]">Mostafa</span>
+          </a>
+        </div>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center justify-center gap-6 z-20">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.substring(1);
             return (
@@ -117,12 +119,10 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Right side - Empty to keep flex-between balance or just remove */}
-
-        {/* Mobile toggle */}
-        <div className="flex lg:hidden items-center gap-4">
+        {/* Right side balance & Mobile toggle */}
+        <div className="flex-1 flex justify-end z-20">
           <button
-            className="text-[var(--fg)] p-2"
+            className="lg:hidden text-[var(--fg)] p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
