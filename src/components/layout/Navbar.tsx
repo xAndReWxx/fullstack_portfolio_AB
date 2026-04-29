@@ -93,7 +93,7 @@ export default function Navbar() {
             
             {/* The Text */}
             <div className="flex flex-col justify-center">
-              <span className="font-bold tracking-tight text-xl text-[var(--fg)] group-hover:text-white transition-colors duration-300 leading-none" style={{ fontFamily: "var(--font-heading)" }}>
+              <span className="font-bold tracking-tight text-xl text-[var(--fg)] bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-[var(--teal)] group-hover:to-[var(--orange)] transition-all duration-300 leading-none" style={{ fontFamily: "var(--font-heading)" }}>
                 Andrew B.
               </span>
             </div>
