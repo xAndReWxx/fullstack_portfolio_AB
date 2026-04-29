@@ -96,9 +96,6 @@ export default function Navbar() {
               <span className="font-bold tracking-tight text-xl text-[var(--fg)] group-hover:text-white transition-colors duration-300 leading-none" style={{ fontFamily: "var(--font-heading)" }}>
                 Andrew B.
               </span>
-              <span className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[var(--fg-muted)] group-hover:text-[var(--teal)] font-mono mt-1 transition-colors duration-300">
-                Software Engineer
-              </span>
             </div>
           </a>
         </div>
