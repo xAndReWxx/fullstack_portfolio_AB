@@ -9,13 +9,13 @@ const testimonials = [
     id: 1,
     name: "Sarah Jenkins",
     role: "CTO, FinTech Innovators",
-    text: "Mostafa is a rare breed of developer who understands both elegant UI design and deep backend architecture. He entirely transformed our slow legacy portal into a lightning-fast React/.NET application.",
+    text: "Andrew is a rare breed of developer who understands both elegant UI design and deep backend architecture. He entirely transformed our slow legacy portal into a lightning-fast React/.NET application.",
   },
   {
     id: 2,
     name: "David Chen",
     role: "Founder, StartupX",
-    text: "Working with Mostafa was the best decision we made for our MVP. His ability to anticipate edge cases and deliver a polished, scalable product ahead of schedule was incredible.",
+    text: "Working with Andrew was the best decision we made for our MVP. His ability to anticipate edge cases and deliver a polished, scalable product ahead of schedule was incredible.",
   },
   {
     id: 3,
