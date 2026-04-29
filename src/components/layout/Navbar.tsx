@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -20,19 +20,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const [theme, setTheme] = useState("dark"); // simple toggle state for visual
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      if (theme === "dark") {
-        document.documentElement.classList.add("dark");
-        document.documentElement.classList.remove("light");
-      } else {
-        document.documentElement.classList.add("light");
-        document.documentElement.classList.remove("dark");
-      }
-    }
-  }, [theme]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -75,10 +62,6 @@ export default function Navbar() {
       });
       setMobileOpen(false);
     }
-  };
-
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
@@ -134,50 +117,10 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Right side */}
-        <div className="hidden lg:flex items-center gap-4">
-          <button 
-            onClick={toggleTheme}
-            className="relative w-16 h-8 rounded-full bg-black/10 dark:bg-black/40 border border-[var(--border)] flex items-center p-1 cursor-pointer transition-colors shadow-inner"
-            aria-label="Toggle theme"
-          >
-            {/* Sliding Circle */}
-            <motion.div 
-              className="absolute w-6 h-6 rounded-full shadow-[0_0_10px_var(--teal)] z-10"
-              animate={{ 
-                left: theme === "dark" ? "4px" : "34px",
-                backgroundColor: theme === "dark" ? "var(--teal)" : "var(--orange)"
-              }}
-              transition={{ type: "spring", stiffness: 500, damping: 30 }}
-            />
-            {/* Icons */}
-            <div className="w-full flex justify-between px-1 z-0 relative">
-              <Moon size={14} className={theme === "dark" ? "text-transparent" : "text-[var(--fg-muted)]"} />
-              <Sun size={14} className={theme === "dark" ? "text-[var(--fg-muted)]" : "text-transparent"} />
-            </div>
-          </button>
-        </div>
+        {/* Right side - Empty to keep flex-between balance or just remove */}
 
         {/* Mobile toggle */}
         <div className="flex lg:hidden items-center gap-4">
-          <button 
-            onClick={toggleTheme}
-            className="relative w-14 h-7 rounded-full bg-black/10 dark:bg-black/40 border border-[var(--border)] flex items-center p-1 cursor-pointer transition-colors shadow-inner"
-            aria-label="Toggle theme"
-          >
-            <motion.div 
-              className="absolute w-5 h-5 rounded-full shadow-[0_0_10px_var(--teal)] z-10"
-              animate={{ 
-                left: theme === "dark" ? "4px" : "28px",
-                backgroundColor: theme === "dark" ? "var(--teal)" : "var(--orange)"
-              }}
-              transition={{ type: "spring", stiffness: 500, damping: 30 }}
-            />
-            <div className="w-full flex justify-between px-0.5 z-0 relative">
-              <Moon size={12} className={theme === "dark" ? "text-transparent" : "text-[var(--fg-muted)]"} />
-              <Sun size={12} className={theme === "dark" ? "text-[var(--fg-muted)]" : "text-transparent"} />
-            </div>
-          </button>
           <button
             className="text-[var(--fg)] p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
