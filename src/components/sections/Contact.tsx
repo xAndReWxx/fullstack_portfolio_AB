@@ -36,7 +36,7 @@ export default function Contact() {
           </p>
 
           <a 
-            href="mailto:hello@example.com" 
+            href="mailto:andrewbahgatt@gmail.com" 
             className="shimmer-btn inline-flex items-center gap-3 px-8 py-4 rounded-xl font-medium text-lg bg-[var(--fg)] text-[var(--bg)] hover:bg-white transition-colors shadow-[0_0_30px_rgba(255,255,255,0.1)] mb-16"
           >
             <Mail size={20} />
@@ -45,7 +45,7 @@ export default function Contact() {
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
             <a 
-              href="https://github.com" 
+              href="https://github.com/xAndReWxx/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors group"
@@ -56,7 +56,7 @@ export default function Contact() {
             </a>
             
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/andrew-bahgat/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-[var(--fg-muted)] hover:text-[var(--fg)] transition-colors group"

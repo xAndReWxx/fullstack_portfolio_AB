@@ -74,9 +74,9 @@ export default function Hero() {
       
       {/* 🌠 FLOATING SIDEBAR */}
       <div className="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 flex-col items-center gap-6 z-50 glass py-6 px-3 rounded-full border border-[var(--glass-border)] shadow-lg bg-[var(--bg)]/50 backdrop-blur-md">
-        <a href="#" className="text-[var(--fg-muted)] hover:text-white transition-colors hover:scale-110"><GithubIcon /></a>
-        <a href="#" className="text-[var(--fg-muted)] hover:text-white transition-colors hover:scale-110"><LinkedinIcon /></a>
-        <a href="#" className="text-[var(--fg-muted)] hover:text-white transition-colors hover:scale-110"><Mail size={20} /></a>
+        <a href="https://github.com/xAndReWxx/" target="_blank" rel="noopener noreferrer" className="text-[var(--fg-muted)] hover:text-white transition-colors hover:scale-110"><GithubIcon /></a>
+        <a href="https://www.linkedin.com/in/andrew-bahgat/" target="_blank" rel="noopener noreferrer" className="text-[var(--fg-muted)] hover:text-white transition-colors hover:scale-110"><LinkedinIcon /></a>
+        <a href="mailto:andrewbahgatt@gmail.com" className="text-[var(--fg-muted)] hover:text-white transition-colors hover:scale-110"><Mail size={20} /></a>
         <div className="w-2 h-2 rounded-full bg-[var(--teal)] shadow-[0_0_8px_var(--teal)] mt-2" />
       </div>
 
